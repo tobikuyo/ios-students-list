@@ -11,6 +11,7 @@ import UIKit
 class StudentsViewController: UIViewController {
     
     // MARK: - IBOutlets
+    
     @IBOutlet weak var sortSelector: UISegmentedControl!
     @IBOutlet weak var filterSelector: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +20,8 @@ class StudentsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.dataSource = self
     }
     
     // MARK: - Action Handlers
@@ -31,6 +33,10 @@ class StudentsViewController: UIViewController {
     }
     
     // MARK: - Private
+    
+    private func updateDataSource() {
+        
+    }
 }
 
 extension StudentsViewController: UITableViewDataSource {
